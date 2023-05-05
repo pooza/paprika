@@ -29,24 +29,8 @@ module Paprika
       return Template
     end
 
-    def database_class
-      return Postgres
-    end
-
-    def query_template_class
-      return QueryTemplate
-    end
-
     def http_class
       return HTTP
-    end
-
-    def tag_container_class
-      return TagContainer
-    end
-
-    def you_tube_service_class
-      return YouTubeService
     end
 
     def self.name

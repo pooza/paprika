@@ -6,12 +6,9 @@ module Paprika
     def self.assign_values
       return {
         package: Package,
-        controller: controller_class,
-        sns: info_agent_service || sns_class.new,
         env: Environment,
         crypt: Crypt,
         config:,
-        annict: AnnictService.new,
       }
     end
   end
