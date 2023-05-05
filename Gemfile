@@ -1,0 +1,21 @@
+source 'https://rubygems.org'
+ruby '~>3.2.0'
+gem 'ginseng-core', github: 'pooza/ginseng-core', require: 'ginseng'
+gem 'ginseng-fediverse', github: 'pooza/ginseng-fediverse', require: 'ginseng/fediverse'
+gem 'ginseng-web', github: 'pooza/ginseng-web', require: 'ginseng/web'
+gem 'optparse'
+gem 'ruby-progressbar'
+gem 'yamllint'
+
+group :development do
+  gem 'rack-test'
+  gem 'rails-erb-lint'
+  gem 'ricecream'
+  gem 'rubocop'
+  gem 'rubocop-minitest'
+  gem 'rubocop-performance'
+  gem 'rubocop-rake'
+  gem 'slim_lint'
+  gem 'test-unit'
+  gem 'timecop'
+end

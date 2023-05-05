@@ -1,0 +1,17 @@
+controller: misskey
+crypt:
+  password: your_password
+environment: production
+handler:
+  default_tag:
+    tags:
+      - your_default_hash_tag
+  image_format_convert:
+    gif: false
+misskey:
+  url: https://misskey.example.com/
+postgres:
+  dsn: postgres://misskey:password@localhost:5432/misskey
+sidekiq:
+  auth:
+    password: your_password

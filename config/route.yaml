@@ -1,0 +1,12 @@
+- class: Paprika::NodeinfoController
+  path: /nodeinfo
+- class: Paprika::UIController
+  path: /paprika
+- class: Paprika::APIController
+  path: /paprika/api
+- class: Paprika::FeedController
+  path: /paprika/feed
+- class: Paprika::WebhookController
+  path: /paprika/webhook
+- class: Sidekiq::Web
+  path: /paprika/sidekiq

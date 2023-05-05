@@ -1,0 +1,46 @@
+doctype html
+html lang='ja'
+  head
+    == slim.render 'fragment/metadata'
+    == slim.render 'fragment/assets'
+  body
+    == slim.render 'fragment/header'
+    == slim.render 'fragment/breadcrumbs', {entries: [{label: 'モロヘイヤHOME'}]}
+    main#app class=env.type
+      == slim.render 'fragment/message'
+      h1 = package.name
+      nav class='menu clearfix'
+        - if controller.feed?
+          a href='/paprika/app/feed' フィード
+        - if controller.media_catalog?
+          a href='/paprika/app/media' メディアカタログ
+        - if controller.account_timeline?
+          a href='/paprika/app/status' v-if='account.username' = controller.status_label
+        a href='/paprika/app/hashtag' ハッシュタグ
+        a href='/paprika/app/episode' エピソードブラウザ
+        a href='/paprika/app/api' API
+        a href='/paprika/app/health' 動作状況
+        a href='/paprika/app/config' v-if='account.username' 環境設定
+        a href='/paprika/app/handler' v-if='account.is_admin'
+          | ハンドラ
+          .role admin
+        a href=config['/sidekiq/dashboard/url'] target='_blank' rel='noreferrer' v-if='account.is_admin'
+          | Sidekiq
+          .role admin
+    == slim.render 'fragment/footer'
+    javascript:
+      'use strict'
+      Vue.use(VTooltip)
+      Vue.use(PaprikaLib)
+      Vue.use(window.VuejsDialog.main.default, {okText: '了解', cancelText: 'キャンセル'})
+      new Vue({
+        el: '#app',
+        data: {
+          account: {is_admin: false, username: null},
+        },
+        mounted () {
+          Vue.getConfig()
+            .then(e => {this.account = e.account})
+            .catch(e => Vue.alert(this.$dialog, e))
+        },
+      })
