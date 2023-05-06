@@ -1,0 +1,26 @@
+name: test
+on:
+  - push
+env:
+  CI: 'true'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+      - name: apt install
+        run: |
+          sudo apt update
+      - name: bundle install
+        run: |
+          gem install bundler -v '~>2.0'
+          bundle install --jobs 4 --retry 3
+          bundle exec rake bundle:update
+          git diff
+          bundle exec rake bundle:check
+      - name: Run lint
+        run: |
+          bundle exec rake rubocop:lint
