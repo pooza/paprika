@@ -109,14 +109,6 @@ Rake:
     - Rakefile
     - '*.rake'
     - app/task/**/*.rb
-Sequel:
-  Exclude:
-    - '*'
-  Include:
-    - '**/model/**/*.rb'
-    - app/migration/**/*.rb
-Sequel/ConcurrentIndex:
-  Enabled: false
 Style/AsciiComments:
   Enabled: false
 Style/ConditionalAssignment:
