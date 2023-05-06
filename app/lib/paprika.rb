@@ -28,6 +28,12 @@ module Paprika
     Ricecream.define_singleton_method(:arg_to_s, proc {|v| PP.pp(v)})
   end
 
+  def self.rack
+    return Rack::URLMap.new(
+      '/' => Server,
+    )
+  end
+
   def self.load_tasks
     finder = Ginseng::FileFinder.new
     finder.dir = File.join(dir, 'app/task')

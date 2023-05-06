@@ -7,3 +7,7 @@ package:
   license: MIT
   url: https://github.com/pooza/paprika
   version: 1.0.0
+puma:
+  pidfile: tmp/pids/puma.pid
+  port: 3011
+  rackup: app/initializer/config.ru
