@@ -4,6 +4,5 @@ ENV['RAKE'] = nil
 
 require 'paprika'
 module Paprika
-  exit 1 if PumaDaemon.disable?
   PumaDaemon.spawn!(singleton: true)
 end

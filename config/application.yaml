@@ -10,7 +10,9 @@ package:
   version: 1.0.0
 puma:
   pidfile: tmp/pids/puma.pid
-  port: 3011
+  port: 3014
   rackup: app/initializer/config.ru
   threads: 5
   workers: 0
+ruby:
+  jit: true
