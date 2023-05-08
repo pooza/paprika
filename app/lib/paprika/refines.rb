@@ -30,8 +30,8 @@ module Paprika
 
     class ::StandardError
       def log(values = {})
-        logger_class.new.error({error: self}.merge(values))
-        warn(to_h.to_yaml) if environment_class.test? && environment_class.development?
+        Logger.new.error({error: self}.merge(values))
+        warn(to_h.to_yaml) if Environment.test? && Environment.development?
       end
 
       def alert(values = {})

@@ -11,13 +11,6 @@ module Paprika
       Timecop.return
     end
 
-    def test_token
-      return account_class.test_token
-    rescue => e
-      e.log
-      return nil
-    end
-
     def http
       @http ||= HTTP.new
       return @http
