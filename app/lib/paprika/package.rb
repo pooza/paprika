@@ -25,10 +25,6 @@ module Paprika
       return @logger
     end
 
-    def template_class
-      return Template
-    end
-
     def http_class
       return HTTP
     end
