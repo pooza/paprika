@@ -34,9 +34,7 @@ module Paprika
         warn(to_h.to_yaml) if Environment.test? && Environment.development?
       end
 
-      def alert(values = {})
-        log(values)
-      end
+      alias alert log
 
       def source_class
         return self.class

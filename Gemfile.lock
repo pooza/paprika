@@ -108,9 +108,9 @@ GEM
     json (2.6.3)
     json-schema (4.0.0)
       addressable (>= 2.8)
-    loofah (2.20.0)
+    loofah (2.21.3)
       crass (~> 1.0.2)
-      nokogiri (>= 1.5.9)
+      nokogiri (>= 1.12.0)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -136,7 +136,7 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.9)
-    nokogiri (1.14.3-x86_64-linux)
+    nokogiri (1.15.1-x86_64-linux)
       racc (~> 1.4)
     optparse (0.3.1)
     parallel (1.23.0)
@@ -174,7 +174,7 @@ GEM
     ricecream (0.2.1)
     rss (0.2.9)
       rexml
-    rubocop (1.50.2)
+    rubocop (1.51.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -207,14 +207,14 @@ GEM
       rack (~> 2.2, >= 2.2.4)
       rack-protection (= 3.0.6)
       tilt (~> 2.0)
-    slim (5.1.0)
+    slim (5.1.1)
       temple (~> 0.10.0)
-      tilt (>= 2.0.6, < 2.2)
+      tilt (>= 2.1.0)
     slim_lint (0.24.0)
       rubocop (>= 1.0, < 2.0)
       slim (>= 3.0, < 6.0)
-    temple (0.10.0)
-    test-unit (3.5.7)
+    temple (0.10.1)
+    test-unit (3.5.8)
       power_assert
     tilt (2.1.0)
     time (0.2.2)
@@ -259,4 +259,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.12
+   2.4.13

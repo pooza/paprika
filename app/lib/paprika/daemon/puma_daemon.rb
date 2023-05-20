@@ -27,8 +27,6 @@ module Paprika
       return @uri
     end
 
-    private
-
     def initializer_path
       return File.join(Environment.dir, 'app/initializer/puma.rb')
     end
