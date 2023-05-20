@@ -3,6 +3,7 @@ ruby '~>3.2.0'
 gem 'ginseng-core', github: 'pooza/ginseng-core', require: 'ginseng'
 gem 'ginseng-fediverse', github: 'pooza/ginseng-fediverse', require: 'ginseng/fediverse'
 gem 'ginseng-web', github: 'pooza/ginseng-web', require: 'ginseng/web'
+gem 'ohai'
 gem 'optparse'
 gem 'yamllint'
 
