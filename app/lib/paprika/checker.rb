@@ -39,6 +39,29 @@ module Paprika
       raise Ginseng::ImplementError, "'#{__method__}' not implemented"
     end
 
+    def warn?
+      raise Ginseng::ImplementError, "'#{__method__}' not implemented"
+    end
+
+    def error?
+      raise Ginseng::ImplementError, "'#{__method__}' not implemented"
+    end
+
+    def result
+      line = []
+      if error?
+        line.push('ERROR')
+      elsif warn?
+        line.push('WARN')
+      else
+        line.push('OK')
+      end
+      line.push(message)
+      return line.join(' ')
+    rescue => e
+      return "EXCEPTION: #{e.message}"
+    end
+
     def platform
       return ohai[:platform]
     end
